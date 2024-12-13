@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" prefHeight="357.0" prefWidth="743.0" spacing="20.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.sistemagestionempleados.Controlador">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+   <AnchorPane prefHeight="305.0" prefWidth="685.0">
+      <children>
+         <VBox prefHeight="316.0" prefWidth="226.0">
+            <children>
+            
+                      <Label fx:id="welcomeText" prefHeight="28.0" prefWidth="241.0" text="Formulario de Empleados">
+                  <font>
+                     <Font size="22.0" />
+                  </font>
+               </Label>
+               <VBox prefHeight="50.0" prefWidth="270.0">
+                  <children>
+                     <Label text="Nombre">
+                        <font>
+                           <Font size="16.0" />
+                        </font>
+                     </Label>
+                     <TextField fx:id="textNombre" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="240.0" />
+                  </children>
+                  <VBox.margin>
+                     <Insets top="20.0" />
+                  </VBox.margin>
+               </VBox>
+               <VBox prefHeight="50.0" prefWidth="270.0">
+                  <children>
+                     <Label text="Apellidos">
+                        <font>
+                           <Font size="16.0" />
+                        </font>
+                     </Label>
+                     <TextField fx:id="textApellidos" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="240.0" />
+                  </children>
+                  <VBox.margin>
+                     <Insets top="10.0" />
+                  </VBox.margin>
+               </VBox>
+               <VBox prefHeight="50.0" prefWidth="270.0">
+                  <children>
+                     <Label text="Departamentos">
+                        <font>
+                           <Font size="16.0" />
+                        </font>
+                     </Label>
+                     <TextField fx:id="textDepartamento"  maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="240.0" />
+                  </children>
+                  <VBox.margin>
+                     <Insets top="10.0" />
+                  </VBox.margin>
+               </VBox>
+               <VBox prefHeight="50.0" prefWidth="270.0">
+                  <children>
+                     <Label text="Sueldo">
+                        <font>
+                           <Font size="16.0" />
+                        </font>
+                     </Label>
+                     <TextField fx:id="textSueldo" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="240.0" />
+                  </children>
+                  <VBox.margin>
+                     <Insets top="10.0" />
+                  </VBox.margin>
+               </VBox>
+               <HBox prefHeight="21.0" prefWidth="301.0">
+                  <children>
+                     <Button fx:id="btnInsetar" mnemonicParsing="false" onAction="#btnInsetar" text="Insertar">
+                        <HBox.margin>
+                           <Insets right="10.0" />
+                        </HBox.margin>
+                     </Button>
+                     <Button fx:id="btnBorrar" mnemonicParsing="false" onAction="#btnBorrar" text="Borrar">
+                        <HBox.margin>
+                           <Insets right="10.0" />
+                        </HBox.margin>
+                     </Button>
+                     <Button fx:id="btnEditar" mnemonicParsing="false" onAction="#btnEditar" text="Editar" />
+                  </children>
+                  <VBox.margin>
+                     <Insets top="10.0" />
+                  </VBox.margin>
+               </HBox>
+            </children>
+         </VBox>
+         <VBox layoutX="255.0" layoutY="41.0" prefHeight="276.0" prefWidth="453.0">
+            <children>
+               <Label text="Info: " textFill="RED">
+                  <VBox.margin>
+                     <Insets bottom="10.0" />
+                  </VBox.margin>
+               </Label>
+               <TableView fx:id="tablaEmpleados" prefHeight="217.0" prefWidth="453.0">
+                 <columns>
+                   <TableColumn fx:id="columnId" prefWidth="46.773529052734375" text="ID" />
+                   <TableColumn fx:id="columnNombre" prefWidth="71.24111938476562" text="NOMBRE" />
+                     <TableColumn fx:id="columnApellidos" prefWidth="137.15377807617188" text="APELLIDOS" />
+                     <TableColumn fx:id="columnDepartamento" prefWidth="113.84625244140625" text="DEPARTAMENTO" />
+                     <TableColumn fx:id="columnSueldo" prefWidth="81.056640625" text="SUELDO" />
+                 </columns>
+               </TableView>
+               <Region prefHeight="17.0" prefWidth="453.0" />
+               <HBox prefHeight="21.0" prefWidth="301.0">
+                  <children>
+                     <Button fx:id="btnExportar" mnemonicParsing="false" onAction="#btnExportarXML" text="Exportar a XML">
+                        <HBox.margin>
+                           <Insets right="10.0" />
+                        </HBox.margin>
+                     </Button>
+                     <Button fx:id="btnImportar" mnemonicParsing="false" onAction="#btnImportarXML" text="Importar a XML">
+                        <HBox.margin>
+                           <Insets right="10.0" />
+                        </HBox.margin>
+                     </Button>
+                     <Button fx:id="btnExportarJson" mnemonicParsing="false" onAction="#btnExportarJson" text="Exportar a JSON">
+                        <HBox.margin>
+                           <Insets right="10.0" />
+                        </HBox.margin>
+                     </Button>
+                     <Button fx:id="btnImportarJson" mnemonicParsing="false" onAction="#btnImportarJson" text="Importar a JSON" />
+                  </children>
+               </HBox>
+            </children>
+         </VBox>
+      </children>
+   </AnchorPane>
+</VBox>

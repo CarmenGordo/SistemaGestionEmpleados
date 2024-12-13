@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" xmlns="http://javafx.com/javafx/23" fx:controller="org.example.sistemagestionempleados.Controlador">
+    <!-- Parte Superior: Título -->
+    <top>
+        <HBox alignment="CENTER" spacing="20" style="-fx-background-color: #3399FF; -fx-padding: 10;">
+            <Label text="Formulario de Empleados" style="-fx-font-size: 18px; -fx-text-fill: white;"/>
+        </HBox>
+    </top>
+
+    <!-- Parte Central: Campos de texto para ingresar datos -->
+    <center>
+        <VBox spacing="10" padding="20, 20, 20, 20">
+            <!-- Campo para Nombre -->
+            <HBox spacing="10">
+                <Label text="Nombre:"/>
+                <TextField fx:id="txtNombre" maxWidth="200"/>
+            </HBox>
+            <!-- Campo para Apellidos -->
+            <HBox spacing="10">
+                <Label text="Apellidos:"/>
+                <TextField fx:id="txtApellidos" maxWidth="200"/>
+            </HBox>
+            <!-- Campo para Departamento -->
+            <HBox spacing="10">
+                <Label text="Departamento:"/>
+                <TextField fx:id="txtDepartamento" maxWidth="200"/>
+            </HBox>
+            <!-- Campo para Sueldo -->
+            <HBox spacing="10">
+                <Label text="Sueldo:"/>
+                <TextField fx:id="txtSueldo" maxWidth="200"/>
+            </HBox>
+        </VBox>
+    </center>
+
+    <!-- Parte Inferior: Tabla y Botones -->
+    <bottom>
+        <VBox spacing="10" padding="20, 20, 20, 20">
+            <!-- Tabla de Empleados -->
+            <TableView fx:id="tblEmpleados" prefHeight="200">
+                <columns>
+                    <TableColumn fx:id="colID" text="ID" prefWidth="50" cellValueFactory="new PropertyValueFactory('id')"/>
+                    <TableColumn fx:id="colNombre" text="Nombre" prefWidth="150" cellValueFactory="new PropertyValueFactory('nombre')"/>
+                    <TableColumn fx:id="colApellidos" text="Apellidos" prefWidth="200" cellValueFactory="new PropertyValueFactory('apellidos')"/>
+                    <TableColumn fx:id="colDepartamento" text="Departamento" prefWidth="150" cellValueFactory="new PropertyValueFactory('departamento')"/>
+                    <TableColumn fx:id="colSueldo" text="Sueldo" prefWidth="100" cellValueFactory="new PropertyValueFactory('sueldo')"/>
+                </columns>
+            </TableView>
+
+            <!-- Botones para acciones -->
+            <HBox spacing="10" alignment="CENTER">
+                <Button text="Insertar" fx:id="btnInsertar"/>
+                <Button text="Borrar" fx:id="btnBorrar"/>
+                <Button text="Actualizar" fx:id="btnActualizar"/>
+            </HBox>
+
+            <!-- Botones para exportar/importar -->
+            <HBox spacing="10" alignment="CENTER">
+                <Button text="Exportar a XML" fx:id="btnExportarXML"/>
+                <Button text="Importar de XML" fx:id="btnImportarXML"/>
+                <Button text="Exportar a JSON" fx:id="btnExportarJSON"/>
+                <Button text="Importar de JSON" fx:id="btnImportarJSON"/>
+            </HBox>
+
+            <!-- Label para mostrar información de estado -->
+            <Label fx:id="lblInfo" style="-fx-text-fill: red;"/>
+        </VBox>
+    </bottom>
+
+    <!-- Definir el padding global -->
+    <padding>
+        <Insets top="20.0" right="20.0" bottom="20.0" left="20.0"/>
+    </padding>
+</BorderPane>
